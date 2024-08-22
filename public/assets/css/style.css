@@ -1,7 +1,11 @@
 @font-face {
-    font-family: 'goodTimes';
-    src: url('assets/font/good\ times\ rg.otf') format('truetype');
-    font-style: normal;
+    font-family: 'Good Times';
+    src: url('../font/good-times.rg-regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../font/BebasNeue-Regular.ttf') format('opentype');
 }
 
 
@@ -9,10 +13,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    overflow-x: hidden;
 }
 
 :root {
@@ -25,6 +25,23 @@ body {
     --dark-grey: #E6E9ED;
     --border-grey: #BEBEBE;
     --yellow: #FFBD13;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-grey);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-blue);
+}
+
+body {
+    overflow-x: hidden;
+    font-family: "Inter", sans-serif;
 }
 
 h1,
@@ -45,10 +62,18 @@ a {
     text-decoration: none;
 }
 
+.nav-link.active {
+    color: var(--blue) !important;
+}
+
 /* FONT CLASS */
 
 .good-times {
     font-family: 'Good Times', serif;
+}
+
+.bebas-neue {
+    font-family: 'Bebas Neue' serif;
 }
 
 /* FONT SIZES CLASS */
@@ -171,7 +196,7 @@ a {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.custom-border{
+.custom-border {
     position: relative;
     display: inline-block;
     border-bottom: 2px solid var(--blue);
@@ -179,7 +204,7 @@ a {
     padding-bottom: 0px;
 }
 
-.custom-border::after{
+.custom-border::after {
     content: '';
     position: absolute;
     right: 0;
@@ -195,11 +220,15 @@ a {
     border-radius: 28px;
 }
 
-.section-1 .img-wrapper{
+.obj-pos-left{
+    object-position: left;
+}
+
+.section-1 .img-wrapper {
     position: relative;
 }
 
-.section-1 .img-wrapper::before{
+.section-1 .img-wrapper::before {
     content: '';
     width: 5px;
     height: 175px;
@@ -213,7 +242,7 @@ a {
 
 /* SECTION 2 */
 .section-2 {
-    background-image: url(img/ellipse.png);
+    background-image: url(../img/ellipse.png);
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: top;
@@ -221,7 +250,7 @@ a {
 }
 
 .section-3 {
-    background-image: url(img/circle.png);
+    background-image: url(../img/circle.png);
     background-repeat: no-repeat;
     background-position-x: left;
     background-position-y: top;
@@ -229,16 +258,16 @@ a {
 }
 
 .section-4 {
-    background-image: url(img/line.png);
+    background-image: url(../img/line.png);
     background-repeat: no-repeat;
     background-position-x: left;
-    background-position-y: 350px;
+    background-position-y: 265px;
     background-size: contain;
-    background-size: 850px;
+    background-size: 700px;
 }
 
 .section-5 .wrapper {
-    background-image: url(img/achievement.png);
+    background-image: url(../img/achievement.png);
     background-blend-mode: overlay;
     background-color: rgba(0, 18, 43, 0.8);
 }
@@ -297,19 +326,33 @@ a {
 }
 
 footer {
+    margin-top: 100px;
     padding: 100px 0;
     background-color: var(--dark-blue);
 }
 
 footer .input-wrapper {
+    height: 50px;
     display: flex;
     align-items: center;
+    position: relative;
     background-color: var(--white);
+}
+
+footer .input-wrapper button{
+    position: absolute;
+    height: 100%;
+    right: 0;
 }
 
 footer .input-wrapper input {
     border: none;
-    padding: 0 16px;
+    padding: 0 16px 0 16px;
+    height: 100%;
+}
+
+footer .input-wrapper input::placeholder {
+    font-size: 14px;
 }
 
 footer .input-wrapper input:hover footer .input-wrapper input:focus {
